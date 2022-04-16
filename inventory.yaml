@@ -1,0 +1,3 @@
+---
+webservers:
+  hosts: "{{ lookup('env', 'NEXTCLOUD_SERVER_IP') }}"

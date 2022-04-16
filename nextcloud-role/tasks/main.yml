@@ -1,0 +1,14 @@
+---
+- name: Create docker-compose file
+  template:
+    src: docker-compose.yaml.j2
+    dest: /root/docker-compose.yaml
+
+- name: Deploy Nextcloud stack
+  command: docker-compose up -d
+
+- name: Run Nextcloud cron every 5 minutes
+  ansible.builtin.cron:
+    name: "Nexcloud cron"
+    minute: "*/5"
+    job: "docker exec -u www-data root_app_1 php cron.php"
