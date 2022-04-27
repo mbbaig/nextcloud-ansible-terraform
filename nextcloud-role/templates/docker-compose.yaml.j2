@@ -31,3 +31,5 @@ services:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
       - MYSQL_HOST=db
+      - APACHE_DISABLE_REWRITE_IP=1
+      - OVERWRITEPROTOCOL=https
