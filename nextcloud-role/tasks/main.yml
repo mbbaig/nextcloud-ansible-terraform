@@ -11,4 +11,4 @@
   ansible.builtin.cron:
     name: "Nexcloud cron"
     minute: "*/5"
-    job: "docker exec -u www-data root_app_1 php cron.php"
+    job: "docker exec -u www-data root-app-1 php cron.php"
